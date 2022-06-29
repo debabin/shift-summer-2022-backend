@@ -25,6 +25,7 @@ npm i
 
 ## Документация
 
+- **🔥 project api** -
 - **🧪 rick and mory** - https://rickandmortyapi.com/
 - **⚗️ breaking bad** - https://breakingbadapi.com/
 

@@ -2,19 +2,36 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
 const cors = require("cors");
+const swaggerJsdoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+
+const { wrapFailure, wrapSuccess, requireAuthToken } = require("./utils");
 
 const server = express();
 const port = 3000;
 const rickAndMortyApiUrl = "https://rickandmortyapi.com/api";
 const breakingBadApiUrl = "https://www.breakingbadapi.com/api";
 
-const wrapFailure = (data) => ({ success: false, data });
-const wrapSuccess = (data) => ({ success: true, data });
-const requireAuthToken = (req, res, next) => {
-  if (req.headers.authtoken) return next();
-  res.status(400).json(wrapFailure({ message: "authToken is undefined" }));
+const swaggerOptions = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: " Shift summer 2022 backend ☀️",
+      version: "1.0.0",
+      description:
+        "Данный репозиторий содержит backend для выполнения индивидуальных заданий. В данном репозитории вы можете есть routes для получения персонажей из вселленных 🧪 rick and mory и ⚗️ breaking bad , a также один post запрос.",
+    },
+    servers: [
+      {
+        url: "http://localhost:3000/api",
+      },
+    ],
+  },
+  apis: ["./routes/*.js"],
 };
+const specs = swaggerJsdoc(swaggerOptions);
 
+server.use("/api", swaggerUi.serve, swaggerUi.setup(specs, { explorer: true }));
 server.use(cors());
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
