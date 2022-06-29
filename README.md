@@ -23,9 +23,13 @@ npm i
 npm i
 ```
 
+## Если нет возможности скачать и запустить проект ?
+
+Для таких случаях захостили сервер на [Heroku](https://dashboard.heroku.com/). Ссылка - https://shift-summer-2022-backend.herokuapp.com/
+
 ## Документация
 
-- **🔥 project api** -
+- **🔥 project api** - https://shift-summer-2022-backend.herokuapp.com/api/
 - **🧪 rick and mory** - https://rickandmortyapi.com/
 - **⚗️ breaking bad** - https://breakingbadapi.com/
 
