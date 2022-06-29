@@ -4,7 +4,7 @@
 
 ## Системные требования
 
-> необходимо скачать **nodejs/npm** - https://nodejs.org/en/download/
+> необходимо скачать [**nodejs/npm**](https://nodejs.org/en/download/)
 
 - **nodejs** > 16
 - **npm** > 8
