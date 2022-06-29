@@ -111,6 +111,6 @@ server.post("/api/create/order", async (req, res) => {
   );
 });
 
-server.listen(port, () => {
+server.listen(80, () => {
   console.log(`Listening on port ${port}`);
 });
