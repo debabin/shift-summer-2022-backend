@@ -8,7 +8,6 @@ const swaggerUi = require("swagger-ui-express");
 const { wrapFailure, wrapSuccess, requireAuthToken } = require("./utils");
 
 const server = express();
-const port = 3000;
 const rickAndMortyApiUrl = "https://rickandmortyapi.com/api";
 const breakingBadApiUrl = "https://www.breakingbadapi.com/api";
 
@@ -111,6 +110,6 @@ server.post("/api/create/order", async (req, res) => {
   );
 });
 
-server.listen(80, () => {
+server.listen(process.env.PORT || 3000, () => {
   console.log(`Listening on port ${port}`);
 });
