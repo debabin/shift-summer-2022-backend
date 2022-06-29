@@ -40,7 +40,7 @@ npm i
 ### Order
 
 - **POST** /create/order - запрос для создание заказа 📦
-  - body - { order:object }
+  - body - { order: object }
 
 ### Rick and morty
 
@@ -51,7 +51,7 @@ npm i
 - **GET** /rickAndMorty/characters/?page={number} - запрос возвращает персонажей из вселенной **🧪 rick and mory**
   - page (int, optional)
 
-### Breaking bad\*
+### Breaking bad
 
 > чтобы запросы работали необходимо указать header authToken (любая строка)
 
