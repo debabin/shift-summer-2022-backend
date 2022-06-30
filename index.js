@@ -30,7 +30,7 @@ const swaggerOptions = {
 };
 const specs = swaggerJsdoc(swaggerOptions);
 
-server.use(cors());
+server.use(cors({ credentials: true, origin: "*" }));
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 
