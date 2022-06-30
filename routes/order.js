@@ -5,11 +5,19 @@
  *     Order:
  *       type: object
  *       required:
- *         - id
+ *         - title
+ *         - description
+ *         - sender
  *       properties:
- *         id:
+ *         sender:
+ *           type: string
+ *           description: sender full name
+ *         title:
  *           type: string
  *           description: The auto-generated id of the book
+ *         id:
+ *           type: string
+ *           description: The auto-generated id of the order
  */
 
 /**

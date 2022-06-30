@@ -1,14 +1,14 @@
 /**
  * @swagger
  * tags:
- *   name: 🧪 rick and morty routes
+ *   name: 🧪 rick and morty
  */
 
 /**
  * @swagger
  * /rickAndMorty/characters:
  *   get:
- *     tags: [🧪 rick and morty routes]
+ *     tags: [🧪 rick and morty]
  *     summary: Returns the list of all the characters
  *     parameters:
  *       - in: header
@@ -42,8 +42,8 @@
  * @swagger
  * /rickAndMorty/characters/{characterId}:
  *   get:
- *     tags: [🧪 rick and morty routes]
- *     summary: Returns the list of all the characters
+ *     tags: [🧪 rick and morty]
+ *     summary: Returns the character
  *     parameters:
  *       - in: path
  *         name: characterId

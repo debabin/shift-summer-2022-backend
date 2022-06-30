@@ -30,7 +30,6 @@ const swaggerOptions = {
 };
 const specs = swaggerJsdoc(swaggerOptions);
 
-server.use("/api", swaggerUi.serve, swaggerUi.setup(specs, { explorer: true }));
 server.use(cors());
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
@@ -109,6 +108,8 @@ server.post("/api/create/order", async (req, res) => {
     })
   );
 });
+
+server.use("/api", swaggerUi.serve, swaggerUi.setup(specs, { explorer: true }));
 
 const port = process.env.PORT || 3000;
 server.listen(port, () => {

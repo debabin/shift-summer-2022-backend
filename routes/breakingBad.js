@@ -1,14 +1,14 @@
 /**
  * @swagger
  * tags:
- *   name: ⚗️ breaking bad routes
+ *   name: ⚗️ breaking bad
  */
 
 /**
  * @swagger
  * /breakingBad/characters:
  *   get:
- *     tags: [⚗️ breaking bad routes]
+ *     tags: [⚗️ breaking bad]
  *     summary: Returns the list of all the characters
  *     parameters:
  *       - in: header
@@ -42,8 +42,8 @@
  * @swagger
  * /breakingBad/characters/{characterId}:
  *   get:
- *     tags: [⚗️ breaking bad routes]
- *     summary: Returns the list of all the characters
+ *     tags: [⚗️ breaking bad]
+ *     summary: Returns the character
  *     parameters:
  *       - in: path
  *         name: characterId
