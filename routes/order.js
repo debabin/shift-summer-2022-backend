@@ -5,19 +5,77 @@
  *     Order:
  *       type: object
  *       required:
- *         - title
- *         - description
+ *         - package
+ *         - receiver
  *         - sender
+ *         - adress
  *       properties:
  *         sender:
- *           type: string
- *           description: sender full name
- *         title:
- *           type: string
- *           description: The auto-generated id of the book
- *         id:
- *           type: string
- *           description: The auto-generated id of the order
+ *           type: object
+ *           description: sender personal data
+ *           properties:
+ *              firstname:
+ *                  type: string
+ *                  required: true
+ *              lastname:
+ *                  type: string
+ *                  required: true
+ *              middlename:
+ *                  type: string
+ *              birthDate:
+ *                   type: string
+ *                   format: date
+ *                   required: true
+ *              registrationAdress:
+ *                   type: string
+ *         receiver:
+ *           type: object
+ *           description: receiver personal data
+ *           properties:
+ *              firstname:
+ *                  type: string
+ *                  required: true
+ *              lastname:
+ *                  type: string
+ *                  required: true
+ *              middlename:
+ *                  type: string
+ *              birthDate:
+ *                   type: string
+ *                   format: date
+ *                   required: true
+ *              registrationAdress:
+ *                   type: string
+ *         address:
+ *           type: object
+ *           description: receiver address
+ *           properties:
+ *              city:
+ *                  type: string
+ *                  required: true
+ *              street:
+ *                  type: string
+ *                  required: true
+ *              house:
+ *                  type: string
+ *                  required: true
+ *              apartment:
+ *                   type: string
+ *                   required: true
+ *              comment:
+ *                   type: string
+ *         package:
+ *           type: object
+ *           description: receiver adress
+ *           properties:
+ *              type:
+ *                  type: string
+ *                  required: true
+ *              weight:
+ *                  type: number
+ *                  required: true
+ *              comment:
+ *                   type: string
  */
 
 /**
@@ -51,5 +109,11 @@
  *                     type: boolean
  *                     description: status of response
  *                  data:
- *                     $ref: '#/components/schemas/Order'
+ *                      allOf:
+ *                          - $ref: '#/components/schemas/Order'
+ *                          - type: object
+ *                            properties:
+ *                              id:
+ *                                  type: string
+ *                                  description: auto-generated id of the order
  */
