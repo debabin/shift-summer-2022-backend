@@ -122,7 +122,7 @@ server.post("/api/create/order", async (req, res) => {
   }
 
   if (Object.keys(errors).length) {
-    return res.json(wrapFailure(errors));
+    return res.status(400).json(wrapFailure(errors));
   }
 
   res.json(
