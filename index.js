@@ -106,8 +106,8 @@ server.post("/api/create/order", async (req, res) => {
     sender: {},
   };
 
-  if (order.sender?.firstname.includes(";")) errors.sender = {};
-  errors.sender.firstname = "Недопустимые символы в имени";
+  if (order.sender?.firstname.includes(";"))
+    errors.sender.firstname = "Недопустимые символы в имени";
   if (order.receiver?.firstname.includes(";")) {
     errors.receiver = {};
     errors.receiver.firstname = "Недопустимые символы в имени";
