@@ -102,6 +102,29 @@ server.post("/api/create/order", async (req, res) => {
       .status(400)
       .json(wrapFailure({ message: "order is not object" }));
 
+  let errors = {
+    sender: {},
+  };
+
+  if (order.sender?.firstname.includes(";")) errors.sender = {};
+  errors.sender.firstname = "Недопустимые символы в имени";
+  if (order.receiver?.firstname.includes(";")) {
+    errors.receiver = {};
+    errors.receiver.firstname = "Недопустимые символы в имени";
+  }
+
+  if (
+    order.sender?.firstname === "Jack" &&
+    order.sender?.lastname === "Tesla"
+  ) {
+    errors.sender.firstname = "Пользователь забанен";
+    errors.sender.lastname = "Пользователь забанен";
+  }
+
+  if (Object.keys(errors).length) {
+    return res.json(wrapFailure(errors));
+  }
+
   res.json(
     wrapSuccess({
       order: { id: Math.floor(Math.random() * 1000000000), ...order },
